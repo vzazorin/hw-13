@@ -170,6 +170,7 @@
   "nodemonConfig": {
     "ignore": [
       "*.hot-update.json",
+      "logs.json",
       "client"
     ]
   },

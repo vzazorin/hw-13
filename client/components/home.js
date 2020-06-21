@@ -12,7 +12,7 @@ const Home = () => {
     dispatch(getProducts())
     dispatch(getRates())
   }, [])
-  
+
   return (
     <div>
       <Header />

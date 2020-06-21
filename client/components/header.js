@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { setBase } from '../redux/reducers/products'
+import { Link } from 'react-router-dom'
+import { setBase, setStatus } from '../redux/reducers/products'
 
 const Header = () => {
   const dispatch = useDispatch()
@@ -18,6 +19,12 @@ const Header = () => {
 
   return (
     <div>
+      <button type="button" onClick={() => dispatch(setStatus('price'))}>
+        $$
+      </button>
+      <button type="button" onClick={() => dispatch(setStatus('title'))}>
+        A-z
+      </button>
       {['CAD', 'USD', 'EUR'].map((it) => {
         return (
           <button
@@ -32,7 +39,9 @@ const Header = () => {
           </button>
         )
       })}
-
+      <button type="button">
+        <Link to="/basket">Basket</Link>
+      </button>
       <div>{sum !== 0 && sum}</div>
       <div>{numberOfItems !== 0 && numberOfItems}</div>
     </div>

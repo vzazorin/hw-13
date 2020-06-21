@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
 import { Switch, Route, Redirect, StaticRouter } from 'react-router-dom'
+import Basket from '../components/basket'
 
 import store, { history } from '../redux'
 
@@ -73,6 +74,7 @@ const RootComponent = (props) => {
         <Startup>
           <Switch>
             <Route exact path="/" component={() => <Home />} />
+            <Route exact path="/basket" component={() => <Basket />} />
             <PrivateRoute exact path="/hidden-route" component={() => <DummyView />} />
             <Route component={() => <NotFound />} />
           </Switch>
